@@ -1,0 +1,35 @@
+@extends('language.layout')
+@section('content')
+
+<div class="card mt-5">
+    <h2 class="card-header">Edit Language</h2>
+    <div class="card-body">
+        <form action="{{url('language/update/' . $language->id)}}" method="POST">
+            @csrf
+
+            <div class="mt-2">
+                <label for="language">Language</label>
+                <input type="text" name="language" value="{{$language->language}}">
+            </div>
+
+            <div class="mt-2">
+                <label for="country">Country</label>
+                <input type="text" name="country" value="{{$language->country}}">
+            </div>
+
+            <div class="mt-2">
+                <label for="info">Info</label>
+                <input type="text" name="info" value="{{$language->info}}">
+            </div>
+
+            <div class="mt-2">
+                <label for="age">age</label>
+                <input type="text" name="age" value="{{$language->age}}">
+            </div>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+@endsection
